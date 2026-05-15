@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body class="bg-[#f7f7fb]">
+
+    <div class="flex min-h-screen">
+        <%- include("sidebar"); %>
+            <div class="flex-1">
+                <%- include(page); %>
+            </div>
+    </div>
+
+</body>
+
+</html>

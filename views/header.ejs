@@ -1,0 +1,99 @@
+<div class="flex items-center justify-evenly w-full h-15 ">
+    <div class="flex items-center justify-center md:w-50 md:h-12 ">
+        <h1 class="text-2xl">
+            Real Estate
+        </h1>
+    </div>
+    <div class="flex justify-between md:w-[1050px] ">
+        <ul x-data="{ active: 'Home' }" class="flex items-center justify-evenly  md:w-xl h-12 bg-gray-100 rounded-3xl">
+            <li @click="active='Home'" :class="active === 'Home' && 'bg-black text-white'"
+                class="px-[8px]  mx-1  rounded-3xl ">
+                <a href="/" class="block">
+                    Home
+                </a>
+            </li>
+            <li @click="active='Property'" :class="active === 'Property' && 'bg-black text-white'"
+                class="px-[8px]  mx-1  rounded-3xl">
+                <a href="#" class="block">
+                    Property
+                </a>
+            </li>
+            <li @click="active='Agent'" :class="active === 'Agent' && 'bg-black text-white'"
+                class="px-[8px]  mx-1  rounded-3xl">
+                <a href="#" class="block">
+                    Agent
+                </a>
+            </li>
+            <li @click="active='Developer'" :class="active === 'Developer' && 'bg-black text-white'"
+                class="px-[8px]  mx-1  rounded-3xl">
+                <a href="#" class="block">
+                    Developer
+                </a>
+            </li>
+            <li @click="active='Facility management'" :class="active === 'Facility management' && 'bg-black text-white'"
+                class="px-[8px]  mx-1  rounded-3xl">
+                <a href="#" class="block">
+                    Facility management
+                </a>
+            </li>
+            <li @click="active='About'" :class="active === 'About' && 'bg-black text-white'"
+                class="px-[8px]  mx-1  rounded-3xl">
+                <a href="#" class="block">
+                    About
+                </a>
+            </li>
+        </ul>
+
+        <div class="flex items-center justify-center gap-3 md:w-[210px] h-12 px-4 bg-gray-100 rounded-3xl text-black">
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-phone">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path
+                    d="M5 4h4l2 5l-2.5 1.5a11 11 0 0 0 5 5l1.5 -2.5l5 2v4a2 2 0 0 1 -2 2a16 16 0 0 1 -15 -15a2 2 0 0 1 2 -2" />
+            </svg>
+            <span class="text-sm">
+                +91 123-455-4556
+            </span>
+        </div>
+        <a  href="/user/sign-in-page">
+        <div
+        class="flex items-center justify-center gap-2 md:w-[120px] h-12 px-4 bg-purple-200 rounded-3xl text-black cursor-pointer">
+        
+            <a class="text-sm text-purple-500" href="/user/sign-in-page">
+                Sign In
+            </a>
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6 bg-purple-700  text-white rounded-4xl">
+
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+
+                </svg>
+            </div>
+        </a>
+
+        <div
+            class="flex items-center justify-center gap-2 md:w-[120px] h-12 px-4 bg-purple-700 rounded-3xl text-black cursor-pointer">
+
+            <a class="text-sm text-white" href="/user/sign-up-page">
+                Sign Up
+            </a>
+            <a class="text-sm text-white" href="/user/sign-up-page">
+
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6 bg-white text-purple-400  rounded-4xl">
+
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="m12.75 15 3-3m0 0-3-3m3 3h-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+
+                </svg>
+            </a>
+
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Real Estate – Sign Up</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    h1,
+    .brand {
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* Animated gradient background */
+    .hero-bg {
+      background: linear-gradient(135deg, #0a0a2e 0%, #0d1b6e 30%, #1a0050 60%, #05102a 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 30% 60%, rgba(99, 60, 255, 0.25) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 20%, rgba(30, 80, 220, 0.2) 0%, transparent 50%);
+      animation: pulse-glow 6s ease-in-out infinite alternate;
+    }
+
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    @keyframes pulse-glow {
+      0% {
+        opacity: 0.7;
+      }
+
+      100% {
+        opacity: 1;
+      }
+    }
+
+    /* Floating blobs */
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(70px);
+      opacity: 0.15;
+      animation: float 8s ease-in-out infinite;
+    }
+
+    .blob-1 {
+      width: 350px;
+      height: 350px;
+      background: #6c3cff;
+      top: 10%;
+      left: -5%;
+      animation-delay: 0s;
+    }
+
+    .blob-2 {
+      width: 250px;
+      height: 250px;
+      background: #1e50dc;
+      bottom: 20%;
+      left: 20%;
+      animation-delay: 3s;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-30px);
+      }
+    }
+
+    /* Tab underline */
+    .tab-active {
+      color: #7c3aed;
+      border-bottom: 2px solid #7c3aed;
+      font-weight: 600;
+    }
+
+    .tab-inactive {
+      color: #9ca3af;
+      border-bottom: 2px solid transparent;
+    }
+
+    /* Input focus ring */
+    .field-input:focus {
+      outline: none;
+      border-color: #7c3aed;
+      box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.12);
+    }
+
+    /* Sign Up button shimmer */
+    .btn-signup {
+      background: linear-gradient(90deg, #7c3aed, #6d28d9);
+      position: relative;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    .btn-signup::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .btn-signup:hover::after {
+      left: 100%;
+    }
+
+    .btn-signup:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 25px rgba(124, 58, 237, 0.4);
+    }
+
+    /* Social buttons */
+    .social-btn {
+      transition: all 0.2s ease;
+      border: 1.5px solid #e5e7eb;
+    }
+
+    .social-btn:hover {
+      border-color: #7c3aed;
+      background: #f5f3ff;
+      transform: translateY(-1px);
+    }
+
+    /* Card entrance animation */
+    .card-enter {
+      animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Hero text entrance */
+    .hero-text {
+      animation: fadeIn 1s ease 0.2s both;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateX(-20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* Divider */
+    .or-divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #9ca3af;
+      font-size: 0.8rem;
+      margin: 16px 0;
+    }
+
+    .or-divider::before,
+    .or-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #e5e7eb;
+    }
+  </style>
+</head>
+
+<body class="min-h-screen flex">
+
+  <!-- LEFT: Hero Panel -->
+  <div class="hero-bg relative hidden md:flex flex-col justify-between flex-1 p-10 text-white">
+    <!-- Blobs -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <!-- Brand -->
+    <div class="relative z-10 hero-text">
+      <span class="brand text-2xl font-bold tracking-tight">Real Estate</span>
+    </div>
+
+    <!-- Back to home -->
+    <a href="#"
+      class="absolute top-6 right-8 text-sm text-white/70 hover:text-white transition z-10 flex items-center gap-1">
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
+      Back to home
+    </a>
+
+    <!-- Hero text -->
+    <div class="relative z-10 hero-text">
+      <h1 class="text-4xl font-bold leading-snug mb-4 max-w-xs">
+        Join a platform that connects buyers, agents, and developers.
+      </h1>
+      <p class="text-white/60 text-sm max-w-xs leading-relaxed">
+        Simplify every step of the real estate journey with a single, modern dashboard.
+      </p>
+
+      <!-- Feature pills -->
+      <div class="mt-8 flex flex-col gap-3">
+        <div class="flex items-center gap-3 bg-white/10 backdrop-blur rounded-xl px-4 py-3 w-fit">
+          <span class="text-violet-300 text-lg">🏠</span>
+          <span class="text-sm text-white/80">Explore thousands of properties</span>
+        </div>
+        <div class="flex items-center gap-3 bg-white/10 backdrop-blur rounded-xl px-4 py-3 w-fit">
+          <span class="text-violet-300 text-lg">📋</span>
+          <span class="text-sm text-white/80">Manage listings in real-time</span>
+        </div>
+        <div class="flex items-center gap-3 bg-white/10 backdrop-blur rounded-xl px-4 py-3 w-fit">
+          <span class="text-violet-300 text-lg">🤝</span>
+          <span class="text-sm text-white/80">Connect with clients instantly</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT: Form Panel -->
+  <div class="flex items-center justify-center bg-gray-50 w-full md:w-[480px] min-h-screen p-6">
+    <div class="bg-white rounded-3xl shadow-2xl shadow-violet-100 p-8 w-full max-w-md card-enter">
+
+      <!-- Heading -->
+      <h2 class="text-2xl font-bold text-gray-900 mb-1" style="font-family:'Playfair Display',serif">Create Your Account
+      </h2>
+      <p class="text-gray-400 text-sm mb-7 leading-relaxed">Sign up to explore properties, manage listings, and connect
+        with clients in one place.</p>
+
+      <!-- Tabs -->
+      <div class="flex border-b border-gray-100 mb-6 gap-6" id="tabs">
+        <button onclick="setTab('buyer')" id="tab-buyer" class="pb-2 text-sm transition-all tab-inactive">Buyer</button>
+        <button onclick="setTab('agent')" id="tab-agent" class="pb-2 text-sm transition-all tab-active">Agent</button>
+        <button onclick="setTab('developers')" id="tab-developers"
+          class="pb-2 text-sm transition-all tab-inactive">Developers</button>
+      </div>
+
+      <!-- Form -->
+      <form action="/user/sign-up" method="POST" class="space-y-4">
+        <!-- Full Name -->
+         <input type="hidden" name="role" id="role" value="agent">
+        <div>
+          <label class="block text-xs font-medium text-gray-600 mb-1.5">Full Name</label>
+          <input name="name" type="text" placeholder="Enter Name"
+            class="field-input w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 placeholder-gray-300 transition-all bg-gray-50 focus:bg-white" />
+        </div>
+
+        <!-- Email -->
+        <div>
+          <label class="block text-xs font-medium text-gray-600 mb-1.5">Email</label>
+          <input name="email" type="email" placeholder="Enter Email"
+            class="field-input w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 placeholder-gray-300 transition-all bg-gray-50 focus:bg-white" />
+        </div>
+
+        <!-- Phone Number -->
+        <div>
+          <label class="block text-xs font-medium text-gray-600 mb-1.5">Phone number</label>
+          <input name="phone" type="tel" placeholder="Enter Phone number"
+            class="field-input w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 placeholder-gray-300 transition-all bg-gray-50 focus:bg-white" />
+        </div>
+
+        <!-- Password -->
+        <div>
+          <label class="block text-xs font-medium text-gray-600 mb-1.5">Password</label>
+          <div class="relative">
+            <input name="password" type="password" id="password" placeholder="Enter Password"
+              class="field-input w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 placeholder-gray-300 transition-all bg-gray-50 focus:bg-white pr-10" />
+            <button onclick="togglePwd('password')"
+              class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-violet-500 transition">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Confirm Password -->
+        <div>
+          <label class="block text-xs font-medium text-gray-600 mb-1.5">Confirm Password</label>
+          <div class="relative">
+            <input name="confirmPassword" type="password" id="confirm-password" placeholder="Enter Confirm Password"
+              class="field-input w-full border border-gray-200 rounded-xl px-4 py-3 text-sm text-gray-800 placeholder-gray-300 transition-all bg-gray-50 focus:bg-white pr-10" />
+            <button onclick="togglePwd('confirm-password')"
+              class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-violet-500 transition">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Sign Up Button -->
+        <button class="btn-signup w-full text-white font-semibold py-3.5 rounded-xl text-sm mt-2 cursor-pointer">
+          Sign Up
+        </button>
+
+        <!-- Divider -->
+        <div class="or-divider">or</div>
+
+        <!-- Social Buttons -->
+        <div class="grid grid-cols-2 gap-3">
+          <button
+            class="social-btn flex items-center justify-center gap-2 py-3 rounded-xl text-sm text-gray-700 font-medium bg-white cursor-pointer">
+            <svg class="w-4 h-4" viewBox="0 0 24 24">
+              <path fill="#4285F4"
+                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
+              <path fill="#34A853"
+                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+              <path fill="#FBBC05"
+                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" />
+              <path fill="#EA4335"
+                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
+            </svg>
+            Continue with Google
+          </button>
+          <button
+            class="social-btn flex items-center justify-center gap-2 py-3 rounded-xl text-sm text-gray-700 font-medium bg-white cursor-pointer">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
+            </svg>
+            Continue with Apple
+          </button>
+        </div>
+
+        <!-- Sign In link -->
+        <p class="text-center text-xs text-gray-400 mt-2">
+          Already have an account?
+          <a href="/user/sign-in-page" class="text-violet-600 font-semibold hover:underline">Sign In</a>
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function setTab(tab) {
+    ['buyer', 'agent', 'developers'].forEach(t => {
+      const el = document.getElementById('tab-' + t);
+
+      el.className =
+        'pb-2 text-sm transition-all ' +
+        (t === tab ? 'tab-active' : 'tab-inactive');
+    });
+
+    document.getElementById("role").value = tab;
+  }
+
+  function togglePwd(id) {
+    const inp = document.getElementById(id);
+    inp.type = inp.type === 'password' ? 'text' : 'password';
+  }
+  </script>
+</body>
+
+</html>

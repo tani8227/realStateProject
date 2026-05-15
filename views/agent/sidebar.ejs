@@ -1,0 +1,192 @@
+<link rel="stylesheet" href="/css/output.css">
+
+<aside class="w-[280px] bg-[#111827] text-white flex flex-col justify-between px-6 py-7 rounded-r-[32px] min-h-screen">
+
+    <div>
+
+        <!-- LOGO -->
+        <div class="flex items-center gap-3 mb-10">
+
+            <div class="w-11 h-11 rounded-2xl bg-[#8B5CF6] flex items-center justify-center text-xl font-bold">
+                R
+            </div>
+
+            <div>
+
+                <h1 class="text-[20px] font-semibold leading-none">
+                    Real Estate
+                </h1>
+
+                <p class="text-[12px] text-gray-400 mt-1">
+                    Admin Dashboard
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- MENU -->
+        <nav class="space-y-3">
+
+            <!-- DASHBOARD -->
+            <a
+                href="/agent/dashboard"
+
+                class="
+                flex items-center gap-4 px-5 py-4 rounded-2xl font-medium transition duration-300
+
+                <%= active === 'dashboard'
+                    ? 'bg-[#8B5CF6] text-white'
+                    : 'hover:bg-white/10 text-gray-300'
+                %>
+                "
+            >
+
+                <i class="ri-dashboard-line text-xl"></i>
+
+                Dashboard
+
+            </a>
+
+            <!-- PROPERTIES -->
+            <a
+                href="/agent/properties"
+
+                class="
+                flex items-center gap-4 px-5 py-4 rounded-2xl font-medium transition duration-300
+
+                <%= active === 'properties'
+                    ? 'bg-[#8B5CF6] text-white'
+                    : 'hover:bg-white/10 text-gray-300'
+                %>
+                "
+            >
+
+                <i class="ri-home-4-line text-xl"></i>
+
+                Properties
+
+            </a>
+
+            <!-- AGENTS -->
+            <a
+                href="/agent/agents"
+
+                class="
+                flex items-center gap-4 px-5 py-4 rounded-2xl font-medium transition duration-300
+
+                <%= active === 'agents'
+                    ? 'bg-[#8B5CF6] text-white'
+                    : 'hover:bg-white/10 text-gray-300'
+                %>
+                "
+            >
+
+                <i class="ri-team-line text-xl"></i>
+
+                CRM
+
+            </a>
+
+            <!-- ANALYTICS -->
+            <a
+                href="/agent/analytics"
+
+                class="
+                flex items-center gap-4 px-5 py-4 rounded-2xl font-medium transition duration-300
+
+                <%= active === 'analytics'
+                    ? 'bg-[#8B5CF6] text-white'
+                    : 'hover:bg-white/10 text-gray-300'
+                %>
+                "
+            >
+
+                <i class="ri-bar-chart-box-line text-xl"></i>
+
+                Marketing
+
+            </a>
+
+            <!-- REPORTS -->
+            <a
+                href="/agent/reports"
+
+                class="
+                flex items-center gap-4 px-5 py-4 rounded-2xl font-medium transition duration-300
+
+                <%= active === 'reports'
+                    ? 'bg-[#8B5CF6] text-white'
+                    : 'hover:bg-white/10 text-gray-300'
+                %>
+                "
+            >
+
+                <i class="ri-file-chart-line text-xl"></i>
+
+                Staff Management
+
+            </a>
+
+            <!-- SETTINGS -->
+            <a
+                href="/agent/settings"
+
+                class="
+                flex items-center gap-4 px-5 py-4 rounded-2xl font-medium transition duration-300
+
+                <%= active === 'settings'
+                    ? 'bg-[#8B5CF6] text-white'
+                    : 'hover:bg-white/10 text-gray-300'
+                %>
+                "
+            >
+
+                <i class="ri-settings-3-line text-xl"></i>
+
+                Facility Management
+
+            </a>
+
+        </nav>
+
+    </div>
+
+    <!-- PROFILE -->
+    <div class="bg-white/10 rounded-2xl p-4 flex items-center justify-between gap-4">
+
+        <div class="flex items-center gap-4">
+
+            <img
+                src="https://i.pravatar.cc/100"
+                alt="Profile"
+                class="w-12 h-12 rounded-full object-cover"
+            >
+
+            <div>
+
+                <h3 class="text-[15px] font-semibold">
+                    Tarun Malviya
+                </h3>
+
+                <p class="text-[12px] text-gray-400">
+                    Agent
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- LOGOUT -->
+        <a
+            href="/user/logout"
+            class="w-10 h-10 rounded-xl bg-red-500/20 hover:bg-red-500 text-red-400 hover:text-white flex items-center justify-center transition duration-300"
+        >
+
+            <i class="ri-logout-box-r-line text-lg"></i>
+
+        </a>
+
+    </div>
+
+</aside>

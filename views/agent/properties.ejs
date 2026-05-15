@@ -1,0 +1,432 @@
+<div class="flex-1 bg-[#F5F7FB] p-8 overflow-y-auto min-h-screen">
+
+    <!-- TOP HEADER -->
+    <div class="flex items-center justify-between mb-8">
+
+        <div>
+            <h1 class="text-3xl font-semibold text-gray-800">
+                My Properties
+            </h1>
+
+            <p class="text-sm text-gray-400 mt-1">
+                Manage and monitor all your listed properties.
+            </p>
+        </div>
+
+        <div class="flex items-center gap-4">
+
+            <!-- Notification -->
+            <button
+                class="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center text-gray-500 hover:text-violet-600 transition">
+
+                <i class="ri-notification-3-line text-xl"></i>
+
+            </button>
+
+            <!-- Profile -->
+            <img
+                src="https://i.pravatar.cc/100"
+                class="w-12 h-12 rounded-full object-cover border-2 border-white shadow"
+            >
+
+        </div>
+
+    </div>
+
+    <!-- SEARCH + BUTTON -->
+    <div class="flex items-center justify-between mb-8">
+
+        <div class="flex items-center gap-4">
+
+            <!-- SEARCH -->
+            <div class="relative">
+
+                <input
+                    type="text"
+                    placeholder="Search property"
+                    class="w-[280px] h-[52px] rounded-2xl bg-white border border-gray-200 px-5 text-sm outline-none focus:border-violet-400"
+                >
+
+            </div>
+
+            <!-- SEARCH BUTTON -->
+            <button
+                class="h-[52px] px-7 rounded-2xl bg-[#8B5CF6] hover:bg-violet-700 text-white text-sm font-medium transition flex items-center gap-2">
+
+                <i class="ri-search-line"></i>
+
+                Search
+
+            </button>
+
+        </div>
+
+        <!-- ADD PROPERTY -->
+        <button
+            class="h-[52px] px-7 rounded-2xl bg-[#8B5CF6] hover:bg-violet-700 text-white text-sm font-medium transition flex items-center gap-2">
+
+            <i class="ri-add-line text-lg"></i>
+            <a href="/agent/basic-details-page">
+                Add New Property
+            </a>
+        </button>
+
+    </div>
+
+    <!-- PROPERTY CARDS -->
+    <div class="grid grid-cols-3 gap-7">
+
+        <!-- CARD -->
+        <div class="bg-white rounded-[28px] p-4 shadow-sm border border-gray-100">
+
+            <!-- IMAGE -->
+            <div class="relative">
+
+                <img
+                    src="https://images.unsplash.com/photo-1460317442991-0ec209397118?q=80&w=1200"
+                    class="w-full h-[210px] object-cover rounded-2xl"
+                >
+
+                <!-- BADGES -->
+                <div class="absolute top-4 left-4 flex gap-2">
+
+                    <span class="bg-green-100 text-green-600 text-[11px] px-3 py-1 rounded-full font-medium">
+                        Ready to move
+                    </span>
+
+                    <span class="bg-red-100 text-red-500 text-[11px] px-3 py-1 rounded-full font-medium">
+                        For Sale
+                    </span>
+
+                </div>
+
+                <!-- ICONS -->
+                <div class="absolute top-4 right-4 flex gap-2">
+
+                    <button class="w-8 h-8 rounded-full bg-white text-yellow-500 flex items-center justify-center shadow">
+
+                        <i class="ri-star-line"></i>
+
+                    </button>
+
+                    <button class="w-8 h-8 rounded-full bg-white text-red-500 flex items-center justify-center shadow">
+
+                        <i class="ri-delete-bin-6-line"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- CONTENT -->
+            <div class="mt-5">
+
+                <div class="flex items-start justify-between">
+
+                    <div>
+
+                        <h2 class="text-lg font-semibold text-gray-800">
+                            Skyline Tower
+                        </h2>
+
+                        <p class="text-sm text-gray-400 mt-1 flex items-center gap-1">
+
+                            <i class="ri-map-pin-line"></i>
+
+                            Arera Colony, Bhopal
+
+                        </p>
+
+                    </div>
+
+                    <div class="text-right">
+
+                        <h3 class="text-xl font-bold text-[#8B5CF6]">
+                            $840,000
+                        </h3>
+
+                        <p class="text-xs text-gray-400 mt-1">
+                            Units Sold: 38 / 50
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- STATS -->
+                <div class="grid grid-cols-3 gap-3 mt-5">
+
+                    <div class="bg-[#F7F7FB] rounded-xl py-3 text-center">
+
+                        <i class="ri-question-answer-line text-gray-400"></i>
+
+                        <p class="text-sm font-medium text-gray-700 mt-1">
+                            20
+                        </p>
+
+                        <p class="text-[11px] text-gray-400">
+                            Enquiries
+                        </p>
+
+                    </div>
+
+                    <div class="bg-[#F7F7FB] rounded-xl py-3 text-center">
+
+                        <i class="ri-eye-line text-gray-400"></i>
+
+                        <p class="text-sm font-medium text-gray-700 mt-1">
+                            1.2K
+                        </p>
+
+                        <p class="text-[11px] text-gray-400">
+                            Visits
+                        </p>
+
+                    </div>
+
+                    <div class="bg-[#F7F7FB] rounded-xl py-3 text-center">
+
+                        <i class="ri-home-smile-line text-gray-400"></i>
+
+                        <p class="text-sm font-medium text-gray-700 mt-1">
+                            38
+                        </p>
+
+                        <p class="text-[11px] text-gray-400">
+                            Bookings
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- BUTTON -->
+                <button
+                    class="w-full h-[50px] rounded-2xl bg-[#8B5CF6] hover:bg-violet-700 text-white text-sm font-medium mt-5 transition">
+
+                    View Detail
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- CARD -->
+        <div class="bg-white rounded-[28px] p-4 shadow-sm border border-gray-100">
+
+            <div class="relative">
+
+                <img
+                    src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200"
+                    class="w-full h-[210px] object-cover rounded-2xl"
+                >
+
+                <div class="absolute top-4 left-4 flex gap-2">
+
+                    <span class="bg-yellow-100 text-yellow-600 text-[11px] px-3 py-1 rounded-full font-medium">
+                        Under Construction
+                    </span>
+
+                    <span class="bg-red-100 text-red-500 text-[11px] px-3 py-1 rounded-full font-medium">
+                        For Sale
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="mt-5">
+
+                <div class="flex items-start justify-between">
+
+                    <div>
+
+                        <h2 class="text-lg font-semibold text-gray-800">
+                            Ocean Heights
+                        </h2>
+
+                        <p class="text-sm text-gray-400 mt-1 flex items-center gap-1">
+
+                            <i class="ri-map-pin-line"></i>
+
+                            California, USA
+
+                        </p>
+
+                    </div>
+
+                    <div class="text-right">
+
+                        <h3 class="text-xl font-bold text-[#8B5CF6]">
+                            $1,200,000
+                        </h3>
+
+                        <p class="text-xs text-gray-400 mt-1">
+                            Units Sold: 20 / 50
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <!-- PROGRESS -->
+                <div class="mt-5">
+
+                    <div class="flex items-center justify-between mb-2">
+
+                        <span class="text-sm text-gray-500">
+                            65% complete
+                        </span>
+
+                    </div>
+
+                    <div class="w-full h-2 bg-gray-100 rounded-full overflow-hidden">
+
+                        <div class="w-[65%] h-full bg-[#8B5CF6] rounded-full"></div>
+
+                    </div>
+
+                </div>
+
+                <!-- STATS -->
+                <div class="grid grid-cols-3 gap-3 mt-5">
+
+                    <div class="bg-[#F7F7FB] rounded-xl py-3 text-center">
+                        <i class="ri-question-answer-line text-gray-400"></i>
+                        <p class="text-sm font-medium text-gray-700 mt-1">20</p>
+                        <p class="text-[11px] text-gray-400">Enquiries</p>
+                    </div>
+
+                    <div class="bg-[#F7F7FB] rounded-xl py-3 text-center">
+                        <i class="ri-eye-line text-gray-400"></i>
+                        <p class="text-sm font-medium text-gray-700 mt-1">1.2K</p>
+                        <p class="text-[11px] text-gray-400">Visits</p>
+                    </div>
+
+                    <div class="bg-[#F7F7FB] rounded-xl py-3 text-center">
+                        <i class="ri-home-smile-line text-gray-400"></i>
+                        <p class="text-sm font-medium text-gray-700 mt-1">38</p>
+                        <p class="text-[11px] text-gray-400">Bookings</p>
+                    </div>
+
+                </div>
+
+                <!-- BUTTONS -->
+                <div class="grid grid-cols-2 gap-3 mt-5">
+
+                    <button
+                        class="h-[48px] rounded-2xl bg-[#F3EEFF] text-[#8B5CF6] text-sm font-medium hover:bg-violet-100 transition">
+
+                        Add Update
+
+                    </button>
+
+                    <button
+                        class="h-[48px] rounded-2xl bg-[#8B5CF6] text-white text-sm font-medium hover:bg-violet-700 transition">
+
+                        View Detail
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- CARD -->
+        <div class="bg-white rounded-[28px] p-4 shadow-sm border border-gray-100">
+
+            <div class="relative">
+
+                <img
+                    src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1200"
+                    class="w-full h-[210px] object-cover rounded-2xl"
+                >
+
+                <div class="absolute top-4 left-4 flex gap-2">
+
+                    <span class="bg-green-100 text-green-600 text-[11px] px-3 py-1 rounded-full font-medium">
+                        Ready to move
+                    </span>
+
+                    <span class="bg-gray-100 text-gray-500 text-[11px] px-3 py-1 rounded-full font-medium">
+                        For Rent
+                    </span>
+
+                </div>
+
+            </div>
+
+            <div class="mt-5">
+
+                <div class="flex items-start justify-between">
+
+                    <div>
+
+                        <h2 class="text-lg font-semibold text-gray-800">
+                            Palm Residency
+                        </h2>
+
+                        <p class="text-sm text-gray-400 mt-1 flex items-center gap-1">
+
+                            <i class="ri-map-pin-line"></i>
+
+                            Dubai Marina
+
+                        </p>
+
+                    </div>
+
+                    <div class="text-right">
+
+                        <h3 class="text-xl font-bold text-[#8B5CF6]">
+                            $650,000
+                        </h3>
+
+                        <p class="text-xs text-gray-400 mt-1">
+                            Units Rent: 38 / 50
+                        </p>
+
+                    </div>
+
+                </div>
+
+                <div class="grid grid-cols-3 gap-3 mt-5">
+
+                    <div class="bg-[#F7F7FB] rounded-xl py-3 text-center">
+                        <i class="ri-question-answer-line text-gray-400"></i>
+                        <p class="text-sm font-medium text-gray-700 mt-1">20</p>
+                        <p class="text-[11px] text-gray-400">Enquiries</p>
+                    </div>
+
+                    <div class="bg-[#F7F7FB] rounded-xl py-3 text-center">
+                        <i class="ri-eye-line text-gray-400"></i>
+                        <p class="text-sm font-medium text-gray-700 mt-1">1.2K</p>
+                        <p class="text-[11px] text-gray-400">Visits</p>
+                    </div>
+
+                    <div class="bg-[#F7F7FB] rounded-xl py-3 text-center">
+                        <i class="ri-home-smile-line text-gray-400"></i>
+                        <p class="text-sm font-medium text-gray-700 mt-1">38</p>
+                        <p class="text-[11px] text-gray-400">Bookings</p>
+                    </div>
+
+                </div>
+
+                <button
+                    class="w-full h-[50px] rounded-2xl bg-[#8B5CF6] hover:bg-violet-700 text-white text-sm font-medium mt-5 transition">
+
+                    View Detail
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

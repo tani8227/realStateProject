@@ -1,0 +1,312 @@
+<div class="flex-1 bg-[#F5F7FB] min-h-screen p-8 overflow-y-auto">
+
+    <!-- TOP HEADER -->
+    <div class="flex items-center justify-between mb-10">
+
+        <div class="flex items-center gap-3">
+
+            <a
+                class="w-10 h-10 rounded-xl bg-white flex items-center justify-center shadow-sm text-gray-500 hover:text-violet-600 transition">
+
+                <i class="ri-arrow-left-s-line text-xl"></i>
+
+            </a>
+
+            <div>
+
+                <h1 class="text-3xl font-semibold text-gray-800">
+                    Add Property
+                </h1>
+
+                <p class="text-sm text-gray-400 mt-1">
+                    Upload property images, videos and virtual tours.
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT -->
+        <div class="flex items-center gap-4">
+
+            <button
+                class="w-11 h-11 rounded-2xl bg-white shadow-sm flex items-center justify-center text-gray-500 hover:text-violet-600 transition">
+
+                <i class="ri-notification-3-line text-xl"></i>
+
+            </button>
+
+            <img src="https://i.pravatar.cc/100"
+                class="w-11 h-11 rounded-full object-cover border-2 border-white shadow">
+
+        </div>
+
+    </div>
+
+    <!-- STEPPER -->
+    <div class="flex items-center justify-between mb-10 px-5">
+
+        <!-- STEP 1 -->
+        <div class="flex flex-col items-center flex-1">
+            <div class="w-9 h-9 rounded-full bg-[#8B5CF6] text-white flex items-center justify-center text-sm">
+                1
+            </div>
+
+            <p class="text-sm text-[#8B5CF6] font-medium mt-3">
+                Basic Information
+            </p>
+        </div>
+
+        <div class="flex-1 h-[2px] bg-[#8B5CF6] mb-6"></div>
+
+        <!-- STEP 2 -->
+        <div class="flex flex-col items-center flex-1">
+            <div class="w-9 h-9 rounded-full bg-[#8B5CF6] text-white flex items-center justify-center text-sm">
+                2
+            </div>
+
+            <p class="text-sm text-[#8B5CF6] font-medium mt-3">
+                Property Details
+            </p>
+        </div>
+
+        <div class="flex-1 h-[2px] bg-[#8B5CF6] mb-6"></div>
+
+        <!-- STEP 3 -->
+        <div class="flex flex-col items-center flex-1">
+            <div class="w-9 h-9 rounded-full bg-[#8B5CF6] text-white flex items-center justify-center text-sm">
+                3
+            </div>
+
+            <p class="text-sm text-[#8B5CF6] font-medium mt-3">
+                Configuration Setup
+            </p>
+        </div>
+
+        <div class="flex-1 h-[2px] bg-[#8B5CF6] mb-6"></div>
+
+        <!-- STEP 4 -->
+        <div class="flex flex-col items-center flex-1">
+
+            <div
+                class="w-10 h-10 rounded-full bg-gray-300 text-white flex items-center justify-center text-sm border-4 border-violet-100">
+                4
+            </div>
+
+            <p class="text-sm text-[#8B5CF6] font-medium mt-3">
+                Upload Media
+            </p>
+
+        </div>
+
+        <div class="flex-1 h-[2px] bg-gray-300 mb-6"></div>
+
+        <!-- STEP 5 -->
+        <div class="flex flex-col items-center flex-1">
+            <div class="w-9 h-9 rounded-full bg-gray-300 text-white flex items-center justify-center text-sm">
+                5
+            </div>
+
+            <p class="text-sm text-gray-400 mt-3">
+                Documents
+            </p>
+        </div>
+
+        <div class="flex-1 h-[2px] bg-gray-300 mb-6"></div>
+
+        <!-- STEP 6 -->
+        <div class="flex flex-col items-center flex-1">
+            <div class="w-9 h-9 rounded-full bg-gray-300 text-white flex items-center justify-center text-sm">
+                6
+            </div>
+
+            <p class="text-sm text-gray-400 mt-3">
+                Review & Submit
+            </p>
+        </div>
+
+    </div>
+
+    <!-- CARD -->
+    <div class="bg-white rounded-[32px] p-8 shadow-sm border border-gray-100">
+
+        <!-- TITLE -->
+        <div class="mb-8">
+
+            <h2 class="text-2xl font-semibold text-gray-800">
+                Upload Media
+            </h2>
+
+            <p class="text-sm text-gray-400 mt-1">
+                Upload property media files for better visibility.
+            </p>
+
+        </div>
+
+        <!-- FORM -->
+        <form action="/agent/add-upload-media/?pid=<%= pid %>" method="POST" enctype="multipart/form-data"
+            class="space-y-8">
+
+            <!-- TOP GRID -->
+            <div class="grid grid-cols-2 gap-8">
+
+                <!-- PROPERTY IMAGES -->
+                <div>
+
+                    <label class="text-sm font-medium text-gray-700 mb-3 block">
+                        Property Images
+                    </label>
+
+                    <!-- DROP AREA -->
+                    <label
+                        class="w-full h-[130px] border-2 border-dashed border-gray-200 rounded-3xl bg-[#FBFAF5] flex flex-col items-center justify-center cursor-pointer hover:border-[#8B5CF6] transition">
+
+                        <input type="file" id="propertyImages" name="propertyImg" multiple class="hidden">
+
+                        <i class="ri-image-add-line text-4xl text-gray-400 mb-2"></i>
+
+                        <p class="text-sm text-gray-500">
+                            Drag & drop or click to browse
+                        </p>
+
+                        <span class="text-xs text-gray-400 mt-1">
+                            JPG, PNG, WEBP
+                        </span>
+
+                    </label>
+
+                    <!-- PREVIEW -->
+                    <div id="previewContainer" class="flex gap-4 mt-5 flex-wrap"></div>
+
+                </div>
+
+                <!-- VIDEOS -->
+                <div>
+
+                    <label class="text-sm font-medium text-gray-700 mb-3 block">
+                        Videos
+                    </label>
+
+                    <!-- DROP AREA -->
+                    <label
+                        class="w-full h-[130px] border-2 border-dashed border-gray-200 rounded-3xl bg-[#FBFAF5] flex flex-col items-center justify-center cursor-pointer hover:border-[#8B5CF6] transition">
+
+                        <input type="file" id="videos" name="propertyVideo" accept="video/*" multiple class="hidden">
+
+                        <i class="ri-video-add-line text-4xl text-gray-400 mb-2"></i>
+
+                        <p class="text-sm text-gray-500">
+                            Drag & drop or click to browse
+                        </p>
+
+                        <span class="text-xs text-gray-400 mt-1">
+                            MP4, MOV
+                        </span>
+
+                    </label>
+
+                    <!-- VIDEO PREVIEW -->
+                    <div id="videoPreviewContainer" class="flex gap-4 mt-5 flex-wrap"></div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- BUTTONS -->
+            <div class="flex items-center justify-end gap-4 pt-4">
+
+                <!-- BACK -->
+                <a
+                    class="h-[52px] px-8 rounded-2xl border border-gray-300 text-gray-600 hover:bg-gray-100 transition flex items-center gap-2">
+
+                    <i class="ri-arrow-left-line"></i>
+
+                    Back
+
+                </a>
+
+                <!-- NEXT -->
+                <button type="submit"
+                    class="h-[52px] px-8 rounded-2xl bg-[#8B5CF6] hover:bg-violet-700 text-white text-sm font-medium transition flex items-center gap-2">
+
+                    Next
+
+                    <i class="ri-arrow-right-line"></i>
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+<script>
+
+    const propertyImages = document.getElementById("propertyImages");
+
+    const previewContainer = document.getElementById("previewContainer");
+
+    propertyImages.addEventListener("change", function (e) {
+
+        previewContainer.innerHTML = "";
+
+        const files = e.target.files;
+        console.log(files)
+
+        Array.from(files).forEach((file) => {
+
+            const reader = new FileReader();
+
+            reader.onload = function (event) {
+
+                previewContainer.innerHTML += `
+                
+                    <div class="relative">
+                        <img
+                            src="${event.target.result}"
+                            class="w-[90px] h-[90px] rounded-2xl object-cover border border-gray-100"
+                        >
+
+                    </div>
+
+                `;
+
+            };
+            reader.readAsDataURL(file);
+        });
+
+    });
+
+    const videos = document.getElementById("videos");
+
+    const videoPreviewContainer = document.getElementById("videoPreviewContainer");
+
+    videos.addEventListener("change", function (e) {
+
+        videoPreviewContainer.innerHTML = "";
+        const files = e.target.files;
+         
+        if (!files) return; 
+        Array.from(files).forEach((file)=>{
+
+            console.log(file);
+            const videoURL = URL.createObjectURL(file);
+            videoPreviewContainer.innerHTML += `
+            <video
+            controls
+            class="w-[180px] h-[120px] rounded-2xl object-cover border border-gray-100"
+            >
+            <source src="${videoURL}" type="${file.type}">
+            </video>
+            
+            `;
+            })
+
+    });
+
+</script>

@@ -1,0 +1,402 @@
+<div class="w-full min-h-screen bg-[#F8F8FB] px-6 py-6">
+
+    <!-- Stepper -->
+    <div class="flex items-center justify-center gap-5 mb-10 overflow-x-auto">
+
+        <!-- Step -->
+        <div class="flex flex-col items-center min-w-max">
+            <div class="w-7 h-7 rounded-full bg-[#8B5CF6] text-white text-xs flex items-center justify-center">
+                1
+            </div>
+            <p class="text-[13px] text-[#8B5CF6] mt-2">
+                Basic Information
+            </p>
+        </div>
+
+        <div class="w-14 h-[1px] bg-[#C4B5FD]"></div>
+
+        <div class="flex flex-col items-center min-w-max">
+            <div class="w-7 h-7 rounded-full bg-[#8B5CF6] text-white text-xs flex items-center justify-center">
+                2
+            </div>
+            <p class="text-[13px] text-[#8B5CF6] mt-2">
+                Property Details
+            </p>
+        </div>
+
+        <div class="w-14 h-[1px] bg-[#C4B5FD]"></div>
+
+        <div class="flex flex-col items-center min-w-max">
+            <div class="w-7 h-7 rounded-full bg-[#8B5CF6] text-white text-xs flex items-center justify-center">
+                3
+            </div>
+            <p class="text-[13px] text-[#8B5CF6] mt-2">
+                Configuration Setup
+            </p>
+        </div>
+
+        <div class="w-14 h-[1px] bg-[#C4B5FD]"></div>
+
+        <div class="flex flex-col items-center min-w-max">
+            <div class="w-7 h-7 rounded-full bg-[#8B5CF6] text-white text-xs flex items-center justify-center">
+                4
+            </div>
+            <p class="text-[13px] text-[#8B5CF6] mt-2">
+                Upload Media
+            </p>
+        </div>
+
+        <div class="w-14 h-[1px] bg-[#C4B5FD]"></div>
+
+        <div class="flex flex-col items-center min-w-max">
+            <div
+                class="w-8 h-8 rounded-full border-[3px] border-[#8B5CF6] text-[#8B5CF6] bg-white text-xs flex items-center justify-center font-semibold">
+                5
+            </div>
+
+            <p class="text-[13px] text-[#8B5CF6] mt-2 font-medium">
+                Documents
+            </p>
+        </div>
+
+        <div class="w-14 h-[1px] bg-[#D1D5DB]"></div>
+
+        <div class="flex flex-col items-center min-w-max opacity-50">
+            <div class="w-7 h-7 rounded-full bg-[#D1D5DB] text-white text-xs flex items-center justify-center">
+                6
+            </div>
+
+            <p class="text-[13px] text-[#6B7280] mt-2">
+                Review & Submit
+            </p>
+        </div>
+
+    </div>
+
+
+    <!-- Main Container -->
+    <div class="bg-white rounded-[28px] p-8 border border-[#ECECEC]">
+
+        <!-- Basic Information -->
+        <div class="mb-12">
+
+            <h2 class="text-[28px] font-semibold text-[#1F2937] mb-8">
+                Basic Information
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-7">
+
+                <div class="border-b border-[#ECECEC] pb-4">
+                    <p class="text-sm text-[#9CA3AF] mb-2">Property Name</p>
+                    <h4 class="text-[15px] font-medium text-[#111827]">
+
+                       <%= basicDetails.propertyName %>
+                    </h4>
+                </div>
+
+                <div class="border-b border-[#ECECEC] pb-4">
+                    <p class="text-sm text-[#9CA3AF] mb-2">Property Type</p>
+                    <h4 class="text-[15px] font-medium text-[#111827]">
+                        <%= basicDetails.propertyType %>
+                    </h4>
+                </div>
+
+                <div class="border-b border-[#ECECEC] pb-4">
+                    <p class="text-sm text-[#9CA3AF] mb-2">Listing Purpose</p>
+                    <h4 class="text-[15px] font-medium text-[#111827]">
+                          <%= basicDetails.listtingPurpose %>
+                </div>
+
+                <div class="border-b border-[#ECECEC] pb-4">
+                    <p class="text-sm text-[#9CA3AF] mb-2">Listing Category</p>
+                    <h4 class="text-[15px] font-medium text-[#111827]">
+                        <%= basicDetails.listtingCategory %>
+                    </h4>
+                </div>
+
+                <div class="border-b border-[#ECECEC] pb-4">
+                    <p class="text-sm text-[#9CA3AF] mb-2">Property Status</p>
+                    <h4 class="text-[15px] font-medium text-[#111827]">
+                        <%= basicDetails.propertyStatus %>
+                    </h4>
+                </div>
+
+                <div class="border-b border-[#ECECEC] pb-4">
+                    <p class="text-sm text-[#9CA3AF] mb-2">Country</p>
+                    <h4 class="text-[15px] font-medium text-[#111827]">
+                            <%= basicDetails.country %>
+                    </h4>
+                </div>
+
+                <div class="border-b border-[#ECECEC] pb-4">
+                    <p class="text-sm text-[#9CA3AF] mb-2">State</p>
+                    <h4 class="text-[15px] font-medium text-[#111827]">
+                          <%= basicDetails.state %>
+                    </h4>
+                </div>
+
+                <div class="border-b border-[#ECECEC] pb-4">
+                    <p class="text-sm text-[#9CA3AF] mb-2">City</p>
+                    <h4 class="text-[15px] font-medium text-[#111827]">
+                       <%= basicDetails.city %>
+                    </h4>
+                </div>
+
+                <div class="border-b border-[#ECECEC] pb-4">
+                    <p class="text-sm text-[#9CA3AF] mb-2">Locality / Area</p>
+                    <h4 class="text-[15px] font-medium text-[#111827]">
+                         <%= basicDetails.area %>
+                    </h4>
+                </div>
+
+                <div class="border-b border-[#ECECEC] pb-4">
+                    <p class="text-sm text-[#9CA3AF] mb-2">Pin / Postal Code</p>
+                    <h4 class="text-[15px] font-medium text-[#111827]">
+                        <%= basicDetails.pinCode %>
+                    </h4>
+                </div>
+                
+                <div class="border-b border-[#ECECEC] pb-4">
+                    <p class="text-sm text-[#9CA3AF] mb-2">Address</p>
+                    <h4 class="text-[15px] font-medium text-[#111827]">
+                        <%= basicDetails.address %>
+                    </h4>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- Property Details -->
+        <div class="mb-12">
+
+            <h2 class="text-[28px] font-semibold text-[#1F2937] mb-8">
+                Property Details
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-7">
+
+                <div class="border-b border-[#ECECEC] pb-4">
+                    <p class="text-sm text-[#9CA3AF] mb-2"> Area</p>
+                    <h4 class="text-[15px] font-medium"><%= propertyDetails.totalArea %></h4>
+                </div>
+
+                <div class="border-b border-[#ECECEC] pb-4">
+                    <p class="text-sm text-[#9CA3AF] mb-2">Total Units</p>
+                    <h4 class="text-[15px] font-medium"><%= propertyDetails.totalUnit %></h4>
+                </div>
+
+                <div class="border-b border-[#ECECEC] pb-4">
+                    <p class="text-sm text-[#9CA3AF] mb-2">No. of Towers / Blocks</p>
+                    <h4 class="text-[15px] font-medium">
+                        <%= propertyDetails.numberOfTower %>
+                    </h4>
+                </div>
+
+                <div class="border-b border-[#ECECEC] pb-4">
+                    <p class="text-sm text-[#9CA3AF] mb-2">No. of Floors</p>
+                    <h4 class="text-[15px] font-medium"> <%= propertyDetails.numberOfFloor %></h4>
+                </div>
+
+                <div class="border-b border-[#ECECEC] pb-4">
+                    <p class="text-sm text-[#9CA3AF] mb-2">Starting Price</p>
+                    <h4 class="text-[15px] font-medium"><%= propertyDetails.startingPrice %></h4>
+                </div>
+
+                <div class="border-b border-[#ECECEC] pb-4">
+                    <p class="text-sm text-[#9CA3AF] mb-2">Year Build</p>
+                    <h4 class="text-[15px] font-medium"><%=propertyDetails.buildYear %></h4>
+                </div>
+
+                <div class="border-b border-[#ECECEC] pb-4">
+                    <p class="text-sm text-[#9CA3AF] mb-2">Developer / Builder Name</p>
+                    <h4 class="text-[15px] font-medium"><%= propertyDetails.builderName %></h4>
+                </div>
+
+                <div class="border-b border-[#ECECEC] pb-4">
+                    <p class="text-sm text-[#9CA3AF] mb-2">Property Description</p>
+                    <h4 class="text-[15px] font-medium">
+                       <%= propertyDetails.description %>
+                    </h4>
+                </div>
+
+                <div class="md:col-span-2 border-b border-[#ECECEC] pb-4">
+                    <p class="text-sm text-[#9CA3AF] mb-2">Amenities</p>
+
+                    <h4 class="text-[15px] font-medium">
+                        <%= propertyDetails.amenities %>
+                    </h4>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Configuration Setup -->
+        <div class="mb-12">
+
+            <h2 class="text-[28px] font-semibold text-[#1F2937] mb-7">
+                Configuration Setup
+            </h2>
+
+            <div class="flex flex-wrap items-center gap-4 text-[15px] text-[#4B5563] mb-6">
+
+                <span><%= configuration.configurationName%></span>
+
+                <span class="w-1.5 h-1.5 bg-[#9CA3AF] rounded-full"></span>
+
+                <span><%= configuration.area%></span>
+
+                <span class="w-1.5 h-1.5 bg-[#9CA3AF] rounded-full"></span>
+
+                <span><%= configuration.totalUnits%></span>
+
+                <span class="w-1.5 h-1.5 bg-[#9CA3AF] rounded-full"></span>
+
+                <span><%= configuration.availableUnits%></span>
+
+                <span class="w-1.5 h-1.5 bg-[#9CA3AF] rounded-full"></span>
+
+                <span><%= configuration.price%></span>
+
+            </div>
+
+            <div class="flex items-center gap-4">
+
+                <img src=<%= configuration.floorPlanUpload[0] %>
+                    class="w-[64px] h-[64px] rounded-2xl object-cover">
+
+                <p class="text-[15px] text-[#6B7280]">
+                    <%= configuration.floorPlanUpload[0].fieldname%>
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Upload Media -->
+        <div class="mb-12">
+
+            <h2 class="text-[28px] font-semibold text-[#1F2937] mb-7">
+                Upload Media
+            </h2>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-5">
+
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1200&auto=format&fit=crop"
+                        class="rounded-2xl h-[120px] w-full object-cover">
+                </div>
+
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200&auto=format&fit=crop"
+                        class="rounded-2xl h-[120px] w-full object-cover">
+                </div>
+
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&w=1200&auto=format&fit=crop"
+                        class="rounded-2xl h-[120px] w-full object-cover">
+                </div>
+
+                <div class="relative">
+
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=1200&auto=format&fit=crop"
+                        class="rounded-2xl h-[120px] w-full object-cover">
+
+                    <div class="absolute inset-0 flex items-center justify-center">
+
+                        <div class="w-10 h-10 bg-white/90 rounded-full flex items-center justify-center">
+
+                            <i class="ri-play-fill text-[#8B5CF6] text-xl"></i>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Documents -->
+        <div class="mb-12">
+
+            <h2 class="text-[28px] font-semibold text-[#1F2937] mb-7">
+                Documents
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+                <!-- Card -->
+                <div class="border border-[#ECECEC] rounded-3xl p-4 hover:shadow-md transition">
+
+                    <div
+                        class="bg-[#FAFAFA] rounded-2xl h-[120px] flex items-center justify-center overflow-hidden border border-[#EEEEEE]">
+
+                        <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" class="w-16">
+                    </div>
+
+                    <p class="text-center text-sm text-[#374151] mt-4 font-medium">
+                        Sale Agreement.pdf
+                    </p>
+
+                </div>
+
+                <div class="border border-[#ECECEC] rounded-3xl p-4 hover:shadow-md transition">
+
+                    <div
+                        class="bg-[#FAFAFA] rounded-2xl h-[120px] flex items-center justify-center overflow-hidden border border-[#EEEEEE]">
+
+                        <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" class="w-16">
+                    </div>
+
+                    <p class="text-center text-sm text-[#374151] mt-4 font-medium">
+                        Sale Agreement.pdf
+                    </p>
+
+                </div>
+
+                <div class="border border-[#ECECEC] rounded-3xl p-4 hover:shadow-md transition">
+
+                    <div
+                        class="bg-[#FAFAFA] rounded-2xl h-[120px] flex items-center justify-center overflow-hidden border border-[#EEEEEE]">
+
+                        <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" class="w-16">
+                    </div>
+
+                    <p class="text-center text-sm text-[#374151] mt-4 font-medium">
+                        Sale Agreement.pdf
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Bottom Buttons -->
+        <div class="flex items-center justify-end gap-4">
+
+            <button
+                class="px-8 py-3 rounded-2xl border border-[#D1D5DB] text-[#6B7280] font-medium hover:bg-gray-50 transition">
+
+                ← Back
+
+            </button>
+
+            <button class="px-8 py-3 rounded-2xl bg-[#8B5CF6] text-white font-medium hover:opacity-90 transition">
+
+                Submit →
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>

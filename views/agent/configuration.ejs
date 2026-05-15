@@ -1,0 +1,308 @@
+<div class="flex-1 bg-[#F5F7FB] min-h-screen p-8 overflow-y-auto">
+
+    <!-- TOP HEADER -->
+    <div class="flex items-center justify-between mb-10">
+
+        <div class="flex items-center gap-3">
+
+            <a
+                class="w-10 h-10 rounded-xl bg-white flex items-center justify-center shadow-sm text-gray-500 hover:text-violet-600 transition">
+
+                <i class="ri-arrow-left-s-line text-xl"></i>
+
+            </a>
+
+            <div>
+
+                <h1 class="text-3xl font-semibold text-gray-800">
+                    Add Property
+                </h1>
+
+                <p class="text-sm text-gray-400 mt-1">
+                    Configure property unit setup.
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT -->
+        <div class="flex items-center gap-4">
+
+            <button
+                class="w-11 h-11 rounded-2xl bg-white shadow-sm flex items-center justify-center text-gray-500 hover:text-violet-600 transition">
+
+                <i class="ri-notification-3-line text-xl"></i>
+
+            </button>
+
+            <img src="https://i.pravatar.cc/100"
+                class="w-11 h-11 rounded-full object-cover border-2 border-white shadow">
+
+        </div>
+
+    </div>
+
+    <!-- STEPPER -->
+    <div class="flex items-center justify-between mb-10 px-5">
+
+        <!-- STEP 1 -->
+        <div class="flex flex-col items-center flex-1">
+
+            <div
+                class="w-9 h-9 rounded-full bg-[#8B5CF6] text-white flex items-center justify-center text-sm font-medium">
+                1
+            </div>
+
+            <p class="text-sm text-[#8B5CF6] font-medium mt-3">
+                Basic Information
+            </p>
+
+        </div>
+
+        <div class="flex-1 h-[2px] bg-[#8B5CF6] mb-6"></div>
+
+        <!-- STEP 2 -->
+        <div class="flex flex-col items-center flex-1">
+
+            <div
+                class="w-9 h-9 rounded-full bg-[#8B5CF6] text-white flex items-center justify-center text-sm font-medium">
+                2
+            </div>
+
+            <p class="text-sm text-[#8B5CF6] font-medium mt-3">
+                Property Details
+            </p>
+
+        </div>
+
+        <div class="flex-1 h-[2px] bg-[#8B5CF6] mb-6"></div>
+
+        <!-- STEP 3 -->
+        <div class="flex flex-col items-center flex-1">
+
+            <div
+                class="w-10 h-10 rounded-full bg-[#8B5CF6] text-white flex items-center justify-center text-sm font-medium border-4 border-violet-100">
+                3
+            </div>
+
+            <p class="text-sm text-[#8B5CF6] font-medium mt-3">
+                Configuration Setup
+            </p>
+
+        </div>
+
+        <div class="flex-1 h-[2px] bg-gray-300 mb-6"></div>
+
+        <!-- STEP 4 -->
+        <div class="flex flex-col items-center flex-1">
+
+            <div
+                class="w-9 h-9 rounded-full bg-gray-300 text-white flex items-center justify-center text-sm font-medium">
+                4
+            </div>
+
+            <p class="text-sm text-gray-400 mt-3">
+                Upload Media
+            </p>
+
+        </div>
+
+        <div class="flex-1 h-[2px] bg-gray-300 mb-6"></div>
+
+        <!-- STEP 5 -->
+        <div class="flex flex-col items-center flex-1">
+
+            <div
+                class="w-9 h-9 rounded-full bg-gray-300 text-white flex items-center justify-center text-sm font-medium">
+                5
+            </div>
+
+            <p class="text-sm text-gray-400 mt-3">
+                Documents
+            </p>
+
+        </div>
+
+        <div class="flex-1 h-[2px] bg-gray-300 mb-6"></div>
+
+        <!-- STEP 6 -->
+        <div class="flex flex-col items-center flex-1">
+
+            <div
+                class="w-9 h-9 rounded-full bg-gray-300 text-white flex items-center justify-center text-sm font-medium">
+                6
+            </div>
+
+            <p class="text-sm text-gray-400 mt-3">
+                Review & Submit
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- CARD -->
+    <div class="bg-white rounded-[32px] p-8 shadow-sm border border-gray-100">
+
+        <!-- TITLE -->
+        <div class="mb-8">
+
+            <h2 class="text-2xl font-semibold text-gray-800">
+                Configuration Setup
+            </h2>
+
+            <p class="text-sm text-gray-400 mt-1">
+                Add property unit configurations and pricing.
+            </p>
+
+        </div>
+
+        <!-- FORM -->
+        <form action="/agent/add-configuration/?pid=<%= pid %>" method="POST" enctype="multipart/form-data"
+            class="space-y-8">
+
+            <!-- CONFIGURATION BLOCK -->
+            <div class="border border-gray-100 rounded-3xl p-6 bg-[#FCFCFD]">
+
+                <div class="grid grid-cols-2 gap-6">
+
+                    <!-- CONFIG NAME -->
+                    <div>
+
+                        <label class="text-sm font-medium text-gray-600 mb-2 block">
+                            Configuration Name
+                        </label>
+
+                        <input type="text" name="configurationName" placeholder="2BHK / 3BHK"
+                            class="w-full h-[55px] rounded-2xl border border-gray-200 px-5 text-sm outline-none focus:border-[#8B5CF6]">
+
+                    </div>
+
+                    <!-- AREA -->
+                    <div>
+
+                        <label class="text-sm font-medium text-gray-600 mb-2 block">
+                            Area (sq.ft)
+                        </label>
+
+                        <input type="text" name="area" placeholder="Enter Area"
+                            class="w-full h-[55px] rounded-2xl border border-gray-200 px-5 text-sm outline-none focus:border-[#8B5CF6]">
+
+                    </div>
+
+                </div>
+
+                <!-- ROW -->
+                <div class="grid grid-cols-2 gap-6 mt-6">
+
+                    <!-- TOTAL UNITS -->
+                    <div>
+
+                        <label class="text-sm font-medium text-gray-600 mb-2 block">
+                            Total Units
+                        </label>
+
+                        <input type="number" name="totalUnits" placeholder="Enter Total Units"
+                            class="w-full h-[55px] rounded-2xl border border-gray-200 px-5 text-sm outline-none focus:border-[#8B5CF6]">
+
+                    </div>
+
+                    <!-- AVAILABLE UNITS -->
+                    <div>
+
+                        <label class="text-sm font-medium text-gray-600 mb-2 block">
+                            Available Units
+                        </label>
+
+                        <input type="number" name="availableUnits" placeholder="Enter Available Units"
+                            class="w-full h-[55px] rounded-2xl border border-gray-200 px-5 text-sm outline-none focus:border-[#8B5CF6]">
+
+                    </div>
+
+                </div>
+
+                <!-- ROW -->
+                <div class="grid grid-cols-2 gap-6 mt-6">
+
+                    <!-- PRICE -->
+                    <div>
+
+                        <label class="text-sm font-medium text-gray-600 mb-2 block">
+                            Price
+                        </label>
+
+                        <input type="text" name="price" placeholder="Enter Price" multiple
+                            class="w-full h-[55px] rounded-2xl border border-gray-200 px-5 text-sm outline-none focus:border-[#8B5CF6]">
+
+                    </div>
+
+                    <!-- FLOOR PLAN -->
+                    <div>
+
+                        <label class="text-sm font-medium text-gray-600 mb-2 block">
+                            Floor Plan Upload
+                        </label>
+
+                        <label
+                            class="w-full h-[120px] border-2 border-dashed border-gray-200 rounded-3xl bg-[#FBFAF5] flex flex-col items-center justify-center cursor-pointer hover:border-[#8B5CF6] transition">
+                            <input type="file" id="floorPlanUpload" name="floorPlanUpload" multiple class="hidden">
+
+
+                            <i class="ri-upload-cloud-2-line text-3xl text-gray-400 mb-2"></i>
+
+                            <p class="text-sm text-gray-500">
+                                Drag & drop or click to browse
+                            </p>
+
+                            <span class="text-xs text-gray-400 mt-1">
+                                PDF, JPG, PNG
+                            </span>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- ADD MORE -->
+            <button type="button" class="text-[#8B5CF6] text-sm font-medium hover:underline flex items-center gap-2">
+
+                <i class="ri-add-line"></i>
+
+                Add Another Configuration
+
+            </button>
+
+            <!-- BUTTONS -->
+            <div class="flex items-center justify-end gap-4 pt-4">
+
+                <!-- BACK -->
+                <a
+                    class="h-[52px] px-8 rounded-2xl border border-gray-300 text-gray-600 hover:bg-gray-100 transition flex items-center gap-2">
+
+                    <i class="ri-arrow-left-line"></i>
+
+                    Back
+
+                </a>
+
+                <!-- NEXT -->
+                <button type="submit"
+                    class="h-[52px] px-8 rounded-2xl bg-[#8B5CF6] hover:bg-violet-700 text-white text-sm font-medium transition flex items-center gap-2">
+
+                    Next
+
+                    <i class="ri-arrow-right-line"></i>
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>

@@ -1,0 +1,37 @@
+{
+  "name": "real_state",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js node index.js",
+    "tailwind": "tailwindcss -i ./public/css/input.css -o ./public/css/output.css --watch"
+  },
+  "dependencies": {
+    "@iconify/iconify": "^3.1.1",
+    "connect-session-sequelize": "^8.0.6",
+    "dotenv": "^17.4.2",
+    "ejs": "^5.0.2",
+    "express": "^5.2.1",
+    "express-ejs-layouts": "^2.5.1",
+    "express-session": "^1.19.0",
+    "lucide": "^1.14.0",
+    "multer": "^2.1.1",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.22.3",
+    "nodemon": "^3.1.14",
+    "passport": "^0.7.0",
+    "passport-local": "^1.0.0",
+    "sequelize": "^6.37.8"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.0",
+    "autoprefixer": "^10.5.0",
+    "postcss": "^8.5.14",
+    "tailwindcss": "^4.3.0"
+  }
+}

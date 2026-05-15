@@ -1,0 +1,365 @@
+<div class="flex-1 bg-[#F5F7FB] min-h-screen p-8 overflow-y-auto">
+
+    <!-- TOP HEADER -->
+    <div class="flex items-center justify-between mb-10">
+
+        <div class="flex items-center gap-3">
+
+            <a href="/agent/properties"
+                class="w-10 h-10 rounded-xl bg-white flex items-center justify-center shadow-sm text-gray-500 hover:text-violet-600 transition">
+
+                <i class="ri-arrow-left-s-line text-xl"></i>
+
+            </a>
+
+            <div>
+
+                <h1 class="text-3xl font-semibold text-gray-800">
+                    Add Property
+                </h1>
+
+                <p class="text-sm text-gray-400 mt-1">
+                    Add new property details step by step.
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT -->
+        <div class="flex items-center gap-4">
+
+            <button
+                class="w-11 h-11 rounded-2xl bg-white shadow-sm flex items-center justify-center text-gray-500 hover:text-violet-600 transition">
+
+                <i class="ri-notification-3-line text-xl"></i>
+
+            </button>
+
+            <img src="https://i.pravatar.cc/100"
+                class="w-11 h-11 rounded-full object-cover border-2 border-white shadow">
+
+        </div>
+
+    </div>
+
+    <!-- STEPPER -->
+    <div class="flex items-center justify-between mb-10 px-5">
+
+        <!-- STEP -->
+        <div class="flex flex-col items-center flex-1">
+
+            <div
+                class="w-9 h-9 rounded-full bg-[#8B5CF6] text-white flex items-center justify-center text-sm font-medium border-4 border-violet-100">
+                1
+            </div>
+
+            <p class="text-sm text-[#8B5CF6] font-medium mt-3">
+                Basic Information
+            </p>
+
+        </div>
+
+        <div class="flex-1 h-[2px] bg-[#8B5CF6] mb-6"></div>
+
+        <div class="flex flex-col items-center flex-1">
+
+            <div
+                class="w-9 h-9 rounded-full bg-gray-300 text-white flex items-center justify-center text-sm font-medium">
+                2
+            </div>
+
+            <p class="text-sm text-gray-400 mt-3">
+                Property Details
+            </p>
+
+        </div>
+
+        <div class="flex-1 h-[2px] bg-gray-300 mb-6"></div>
+
+        <div class="flex flex-col items-center flex-1">
+
+            <div
+                class="w-9 h-9 rounded-full bg-gray-300 text-white flex items-center justify-center text-sm font-medium">
+                3
+            </div>
+
+            <p class="text-sm text-gray-400 mt-3">
+                Configuration Setup
+            </p>
+
+        </div>
+
+        <div class="flex-1 h-[2px] bg-gray-300 mb-6"></div>
+
+        <div class="flex flex-col items-center flex-1">
+
+            <div
+                class="w-9 h-9 rounded-full bg-gray-300 text-white flex items-center justify-center text-sm font-medium">
+                4
+            </div>
+
+            <p class="text-sm text-gray-400 mt-3">
+                Upload Media
+            </p>
+
+        </div>
+
+        <div class="flex-1 h-[2px] bg-gray-300 mb-6"></div>
+
+        <div class="flex flex-col items-center flex-1">
+
+            <div
+                class="w-9 h-9 rounded-full bg-gray-300 text-white flex items-center justify-center text-sm font-medium">
+                5
+            </div>
+
+            <p class="text-sm text-gray-400 mt-3">
+                Documents
+            </p>
+
+        </div>
+
+        <div class="flex-1 h-[2px] bg-gray-300 mb-6"></div>
+
+        <div class="flex flex-col items-center flex-1">
+
+            <div
+                class="w-9 h-9 rounded-full bg-gray-300 text-white flex items-center justify-center text-sm font-medium">
+                6
+            </div>
+
+            <p class="text-sm text-gray-400 mt-3">
+                Review & Submit
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- FORM CARD -->
+    <div class="bg-white rounded-[32px] p-8 shadow-sm border border-gray-100">
+
+        <div class="mb-8">
+
+            <h2 class="text-2xl font-semibold text-gray-800">
+                Basic Information
+            </h2>
+
+            <p class="text-sm text-gray-400 mt-1">
+                Fill in the basic property details.
+            </p>
+
+        </div>
+
+        <!-- FORM -->
+        <form class="space-y-6" action="/agent/add-basic-details" method="post">
+
+            <!-- ROW -->
+            <div class="grid grid-cols-2 gap-6">
+
+                <!-- PROPERTY NAME -->
+                <div>
+
+                    <label  class="text-sm font-medium text-gray-600 mb-2 block">
+                        Property Name
+                    </label>
+
+                    <input name="propertyName" type="text" placeholder="Enter Property Name"
+                        class="w-full h-[55px] rounded-2xl border border-gray-200 px-5 text-sm outline-none focus:border-[#8B5CF6]">
+
+                </div>
+
+                <!-- PROPERTY TYPE -->
+                <div>
+
+                    <label class="text-sm font-medium text-gray-600 mb-2 block">
+                        Property Type
+                    </label>
+
+                    <select 
+                   name="propertyType"
+                        class="w-full h-[55px] rounded-2xl border border-gray-200 px-5 text-sm outline-none focus:border-[#8B5CF6]">
+
+                        <option>Select</option>
+                        <option>Apartment</option>
+                        <option>Villa</option>
+                        <option>Commercial</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+            <!-- ROW -->
+            <div class="grid grid-cols-2 gap-6">
+
+                <div>
+
+                    <label class="text-sm font-medium text-gray-600 mb-2 block">
+                        Listing Purpose
+                    </label>
+
+                    <select
+                    name="listtingPurpose"
+                        class="w-full h-[55px] rounded-2xl border border-gray-200 px-5 text-sm outline-none focus:border-[#8B5CF6]">
+
+                        <option>Select</option>
+                        <option>For Sale</option>
+                        <option>For Rent</option>
+
+                    </select>
+
+                </div>
+
+                <div>
+
+                    <label class="text-sm font-medium text-gray-600 mb-2 block">
+                        Listing Category
+                    </label>
+
+                    <select
+                    name="listtingCategory"
+                        class="w-full h-[55px] rounded-2xl border border-gray-200 px-5 text-sm outline-none focus:border-[#8B5CF6]">
+
+                        <option>Select</option>
+                        <option>Residential</option>
+                        <option>Commercial</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+            <!-- ROW -->
+            <div class="grid grid-cols-2 gap-6">
+
+                <div>
+
+                    <label class="text-sm font-medium text-gray-600 mb-2 block">
+                        Property Status
+                    </label>
+
+                    <select
+                    name="propertyStatus"
+                        class="w-full h-[55px] rounded-2xl border border-gray-200 px-5 text-sm outline-none focus:border-[#8B5CF6]">
+
+                        <option>Select</option>
+                        <option>Ready to Move</option>
+                        <option>Under Construction</option>
+
+                    </select>
+
+                </div>
+
+                <div>
+
+                    <label class="text-sm font-medium text-gray-600 mb-2 block">
+                        City
+                    </label>
+
+                    <select
+                    name="city"
+                        class="w-full h-[55px] rounded-2xl border border-gray-200 px-5 text-sm outline-none focus:border-[#8B5CF6]">
+
+                        <option>Select</option>
+                        <option>Bhopal</option>
+                        <option>Indore</option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+            <!-- ROW -->
+            <div class="grid grid-cols-2 gap-6">
+
+                <div>
+
+                    <label class="text-sm font-medium text-gray-600 mb-2 block">
+                        State
+                    </label>
+
+                    <input name="state" type="text" placeholder="Enter State"
+                        class="w-full h-[55px] rounded-2xl border border-gray-200 px-5 text-sm outline-none focus:border-[#8B5CF6]">
+
+                </div>
+
+                <div>
+
+                    <label class="text-sm font-medium text-gray-600 mb-2 block">
+                        Country
+                    </label>
+
+                    <input name="country" type="text" placeholder="Enter Country"
+                        class="w-full h-[55px] rounded-2xl border border-gray-200 px-5 text-sm outline-none focus:border-[#8B5CF6]">
+
+                </div>
+
+            </div>
+
+            <!-- ROW -->
+            <div class="grid grid-cols-2 gap-6">
+
+                <div>
+
+                    <label class="text-sm font-medium text-gray-600 mb-2 block">
+                        Locality / Area
+                    </label>
+
+                    <input name="area" type="text" placeholder="Enter Area"
+                        class="w-full h-[55px] rounded-2xl border border-gray-200 px-5 text-sm outline-none focus:border-[#8B5CF6]">
+
+                </div>
+
+                <div>
+
+                    <label class="text-sm font-medium text-gray-600 mb-2 block">
+                        Pin / Postal Code
+                    </label>
+
+                    <input name="pinCode" type="text" placeholder="Enter Pincode"
+                        class="w-full h-[55px] rounded-2xl border border-gray-200 px-5 text-sm outline-none focus:border-[#8B5CF6]">
+
+                </div>
+
+            </div>
+
+            <!-- ROW -->
+            <div class="grid grid-cols-2 gap-6">
+
+                <!-- ADDRESS -->
+                <div>
+
+                    <label class="text-sm font-medium text-gray-600 mb-2 block">
+                        Address
+                    </label>
+
+                    <textarea name="address" rows="4" placeholder="Enter Full Address"
+                        class="w-full rounded-2xl border border-gray-200 p-5 text-sm outline-none resize-none focus:border-[#8B5CF6]"></textarea>
+                </div>
+
+            </div>
+
+            <!-- BUTTON -->
+            <div class="flex justify-end pt-5">
+
+                <button type="submit"
+                    class="h-[54px] px-8 rounded-2xl bg-[#8B5CF6] hover:bg-violet-700 text-white text-sm font-medium transition flex items-center gap-2">
+
+                    Next
+
+                    <i class="ri-arrow-right-line"></i>
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
