@@ -12,6 +12,7 @@ agentRouter.post("/add-property-details", checkAuthentication, agentController.a
 agentRouter.post("/add-configuration", checkAuthentication, multerUpload.array("floorPlanUpload"), agentController.addConfiguration);
 agentRouter.post("/add-upload-media", checkAuthentication, multerUpload.fields([{ name: "propertyImg", maxCount: 10 },{ name: "propertyVideo", maxCount: 5 }]), agentController.addUploadMedia);
 agentRouter.post("/add-document", checkAuthentication, multerUpload.fields([{ name: "certificate", maxCount: 10 },{ name: "floorPlan", maxCount: 5 },{ name: "legalNoc", maxCount: 5 },{ name: "ownership", maxCount: 5 }]), agentController.addDocument);
+agentRouter.get("/review", checkAuthentication, agentController.Review);
 
 
 export default agentRouter;

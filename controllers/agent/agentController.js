@@ -1,11 +1,12 @@
+import path from "path";
 import db from "../../models/index.js";
+import { uploadImg } from "../../features/uploadToCloudinary.js";
 
 const BasicDetails = db.BasicDetails;
 const PropertyDetails = db.PropertyDetails;
 const Configuration = db.Configuration;
 const UploadMedia = db.UploadMedia;
 const Document = db.Document;
-
 
 export const dashboard = (req, res) => {
     return res.render("agent/dashboard", {
@@ -34,10 +35,6 @@ export const basicDetailsPage = (req, res) => {
         active: "properties"
     });
 }
-
-
-
-
 
 export const addBasicDeatils = async (req, res) => {
     try {
@@ -118,15 +115,21 @@ export const addConfiguration = async (req, res) => {
             availableUnits,
             price
         } = req.body;
-        // console.log(req.files);
-
+        
+          const newfile=[];
+        for(let ele of req.files)
+            {
+               const data=await uploadImg(ele.path);
+               newfile.push(data); 
+            }
+        console.log(newfile);
         const configuration = await Configuration.create({
             configurationName,
             area,
             totalUnits,
             availableUnits,
             price,
-            floorPlanUpload: req.files,
+            floorPlanUpload: newfile,
             userId: req.user.id,
             propertyId: pid,
         });
@@ -148,33 +151,60 @@ export const addConfiguration = async (req, res) => {
 };
 
 
+
 export const addUploadMedia = async (req, res) => {
     try {
 
         const { pid } = req.query;
 
+        const newImg = [];
+        const newVideo = [];
 
         console.log(req.files);
 
-        const upload = await UploadMedia.create({
-            propertyImg: req.files.propertyImg,
-            propertyVideo: req.files.propertyVideo,
+        if (req.files?.propertyImg) {
+
+            for (let ele of req.files.propertyImg) {
+
+                const filePath = path.resolve(ele.path);
+
+                const data = await uploadImg(filePath);
+
+                newImg.push(data);
+            }
+        }
+
+        if (req.files?.propertyVideo) {
+
+            for (let ele of req?.files?.propertyVideo) {
+
+                const filePath = path.resolve(ele.path);
+
+                const data = await uploadImg(filePath);
+
+                newVideo.push(data);
+            }
+        }
+
+        await UploadMedia.create({
+            propertyImg: newImg,
+            propertyVideo: newVideo,
             userId: req.user.id,
             propertyId: pid,
         });
-
 
         return res.render("agent/dashboard", {
             layout: false,
             page: "addDocument",
             active: "properties",
-            pid: pid,
+            pid,
         });
 
     } catch (error) {
 
-        console.log("error in adding configuration", error);
+        console.log("error in adding upload media", error);
 
+        return res.send(error.message);
     }
 };
 
@@ -184,12 +214,38 @@ export const addDocument = async (req, res) => {
         const { pid } = req.query;
         console.log(req.files);
 
+         const newCertificate=[];
+        const newFloorPlan=[];
+        const newLegalNoc=[];
+        const newOwnership=[];
+
+         for(let ele of req?.files?.certificate)
+            {
+               const data=await uploadImg(ele.path);
+               newCertificate.push(data); 
+            }
+         for(let ele of req?.files?.floorPlan)
+            {
+               const data=await uploadImg(ele.path);
+               newFloorPlan.push(data); 
+            }
+         for(let ele of req?.files?.legalNoc)
+            {
+               const data=await uploadImg(ele.path);
+               newLegalNoc.push(data); 
+            }
+         for(let ele of req?.files?.ownership)
+            {
+               const data=await uploadImg(ele.path);
+               newOwnership.push(data); 
+            }
+
         const dicument = await Document.create(
             {
-                certificate: req.files.certificate,
-                floorPlan: req.files.floorPlan,
-                legalNoc: req.files.legalNoc,
-                ownership: req.files.ownership,
+                certificate: newCertificate,
+                floorPlan: newFloorPlan,
+                legalNoc:newLegalNoc,
+                ownership: newOwnership,
                 userId: req.user.id,
                 propertyId: pid,
             })
@@ -237,17 +293,26 @@ export const addDocument = async (req, res) => {
     }
 }
 
-export const Review = () => {
+export const Review = (req, res) => {
     try {
         return res.render("agent/dashboard", {
             layout: false,
             page: "success",
             active: "properties",
-            pid: pid,
         });
     } catch (error) {
         console.log("error in adding in review", error);
     }
 }
+
+export const Success = (req, res) => {
+    try {
+        return res.render("agent/dashboard");
+    } catch (error) {
+        console.log("error in adding in review", error);
+    }
+}
+
+
 
 
